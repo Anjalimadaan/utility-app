@@ -10,19 +10,19 @@
 </head>
 <body>
     <div class="container">
-        <header>
+        <div class="header">
             <div class="clear">
                 <i class="fa fa-refresh" aria-hidden="true"></i>
             </div>
-            <div class="date"></div>
-        </header>
+            <div id="date"></div>
+        </div>
         <div class="content">
-            <ul class="list">
+            <ul id="list">
                 <!--
                 <li class="item">
-                    <i class="fa fa-circle-thin check" job="complete" aria-hidden="true"></i>
+                    <i class="fa fa-circle-thin check" job="complete" aria-hidden="true" id="0"></i>
                     <p class="text"></p>
-                    <i class="fa fa-trash-o garbage" job="delete" aria-hidden="true"></i>
+                    <i class="fa fa-trash-o garbage" job="delete" aria-hidden="true" id="0"></i>
                 </li>
                 -->
             </ul>
@@ -32,5 +32,6 @@
             <input type="text" id="input" placeholder="Add a to-do">
         </div>
     </div>
+    <script src="app.js"></script>
 </body>
 </html>
