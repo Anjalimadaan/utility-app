@@ -5,29 +5,34 @@
 }
 
 body {
-    background-color: rgba(0,0,0,0.1);
     font-family: 'Titillium Web', sans-serif;
+    background-color: rgba(0,0,0,0.1);
 }
 
 .container {
-    padding: 0 10px;
-    max-width: 380px;
+    padding: 10px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .header {
     width: 100%;
-    height: 30vh;
-    background-image: url(bg1.jpg);
-    background-size: 100% 200%;
-    background-position: fixed;
-    /*linear-gradient(120deg, #facc6b 0%, #fabc3c 74%);*/
+    height: 200px;
+    background-image: linear-gradient(to right bottom, #080882, #0b0b95, #0e0ea9, #1111bd, #1414d2);
     border-radius: 15px 15px 0px 0px;
     -webkit-border-radius: 15px 15px 0px 0px;
     -moz-border-radius: 15px 15px 0px 0px;
     -ms-border-radius: 15px 15px 0px 0px;
     -o-border-radius: 15px 15px 0px 0px;
     position: relative;
+}
+
+.banner {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 40px;
+    color: #fff;
 }
 
 .clear {
@@ -68,8 +73,8 @@ body {
 
 .content {
     width: 100%;
-    height: 55vh;
-    background-color: #fff;
+    height: 550px;
+    background: #fff;
     overflow: auto;
 }
 
@@ -137,28 +142,50 @@ ul {
 }
 
 .add-to-do {
-    width: 100%;
-    height: 15vh;
     background-color: #fff;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    height: 60px;
+    padding: 10px;
+    border-top: 1px solid rgba(0,0,0,0.1);
     position: relative;
-    padding: 10px 0;
+    border-radius:0px 0px 15px 15px;
+    -webkit-border-radius:0px 0px 15px 15px;
+    -moz-border-radius:0px 0px 15px 15px;
+    -ms-border-radius:0px 0px 15px 15px;
+    -o-border-radius:0px 0px 15px 15px;
 }
 
 .add-to-do i {
-    position: absolute;
     font-size: 40px;
     color: #4162f6;
+    top: 7px;
+    position: absolute;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
 }
 
 .add-to-do input {
     position: absolute;
     left: 50px;
     height: 35px;
-    width: 310px;
-    border: none;
+    max-width: 350px;
+    background-color: transparent;
+    outline: none;
     font-size: 20px;
     padding-left: 10px;
+    border: 1px solid #777777;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    transition: all 0.8s ease;
+    -webkit-transition: all 0.8s ease;
+    -moz-transition: all 0.8s ease;
+    -ms-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
 }
 
 .add-to-do input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -181,5 +208,33 @@ ul {
     font-family: 'Titillium Web', sans-serif;
     font-size: 20px;
 }
+
+@media only screen and (max-width: 420px) {
+    .content {
+        height: 450px;
+    }
+
+    .add-to-do input {
+        max-width: 250px;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .content {
+        height: 360px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .content {
+        height: 290px;
+    }
+
+    .banner {
+        font-size: 35px;
+    }
+}
+
+
 
 

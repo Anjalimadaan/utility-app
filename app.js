@@ -4,6 +4,7 @@ const clear = document.querySelector('.clear');
 const dateElement = document.getElementById('date');
 const list = document.getElementById('list');
 const input = document.getElementById('input');
+const addButton = document.getElementById('add');
 
 // Class Names
 const check = 'fa-check-circle';
