@@ -13,7 +13,6 @@ const app = () => {
 
     // Get the length of the outline 
     const outlineLength = outline.getTotalLength();
-    console.log(outlineLength);
 
     // Pick different sounds
     sounds.forEach(sound => {
@@ -39,7 +38,7 @@ const app = () => {
     timeSelect.forEach(option => {
         option.addEventListener('click', function() {
             duration = this.getAttribute('data-time');
-            timeDisplay.textContent = `${Math.floor(duration / 60)}:${Math.floor(duration % 60)}`;
+            timeDisplay.textContent = `${Math.floor(duration / 60)}:0${Math.floor(duration % 60)}`;
         })
     });
 
@@ -68,14 +67,18 @@ const app = () => {
         outline.style.strokeDashoffset = progress;
 
         // Animate the text
-        timeDisplay.textContent = `${minutes}:${seconds}`;
+        if (seconds < 10) {
+            timeDisplay.textContent = `${minutes}:0${seconds}`;
+        } else {
+            timeDisplay.textContent = `${minutes}:${seconds}`;
+        }
 
         if (currentTime >= duration) {
             song.currentTime = 0;
             song.pause();
             video.pause();
             play.src = './svg/play.svg';
-        }
+        } 
     }
 }
 

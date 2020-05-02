@@ -40,6 +40,10 @@
     pointer-events: none;
 }
 
+.play {
+    cursor: pointer;
+}
+
 .time-display {
     position: absolute;
     bottom: 10%;
@@ -56,6 +60,11 @@
     z-index: -1;
 }
 
+video {
+    height: 100vh;
+    object-fit: cover;
+    object-position: center center;
+}
 
 .time-select button,
 .sound-select button {
