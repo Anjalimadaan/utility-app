@@ -32,6 +32,15 @@ function saveBookmark(event) {
     } else {
         // get back the array from the local storage
         bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+        // check whether the bookmark has already been used
+        for (let i = 0; i < bookmarks.length; i++) {
+            if (bookmarks[i].name === siteName || bookmarks[i].url === siteUrl) {
+                // clear form
+                document.getElementById('myForm').reset();
+                alert('The bookmark already exists');
+                return false;
+            }
+        }
         // push the bookmark object to the array
         bookmarks.push(bookmark);
         // store the updated array in the local storage
