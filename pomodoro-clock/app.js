@@ -16,6 +16,8 @@ let breakTime = parseInt(countBreak.textContent);
 let count = parseInt(countTime.textContent);
 // Heading
 const timeType = document.getElementById('time-type');
+// Audio
+const buzzer = document.getElementById('buzzer');
 
 resetBtn.style.display = 'none';
 
@@ -37,6 +39,7 @@ startBtn.addEventListener('click', function() {
         timeType.textContent = 'Session Time: ';
         count -= 1;
         if (count === 0) {
+            buzzer.play();
             clearInterval(counter);
             startBreak = setInterval(breakTimer, 1000);
             timeType.textContent = 'Break Time: ';
@@ -48,14 +51,13 @@ startBtn.addEventListener('click', function() {
         } else {
             countTime.textContent = Math.floor(count / 60) + ':' + '0' + (count % 60);
         }
-        
-        //countTime.textContent = count;
         function breakTimer() {
             timeType.textContent = 'Break Time: ';
             countBreak.classList.remove('removeDisplay');
             breakTime -= 1;
             countBreak.textContent = breakTime;
             if (breakTime === 0) {
+                buzzer.play();
                 clearInterval(startBreak);
                 countBreak.style.display = 'none';
                 timeType.style.display= 'none';
