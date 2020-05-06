@@ -18,8 +18,14 @@ let count = parseInt(countTime.textContent);
 const timeType = document.getElementById('time-type');
 // Audio
 const buzzer = document.getElementById('buzzer');
+// Number
+const num = document.getElementById('numb');
 
+num.style.display = 'none';
 resetBtn.style.display = 'none';
+
+let arr = [];
+
 
 // EVENT LISTENERS
 minusTime.addEventListener('click', minus5);
@@ -57,11 +63,16 @@ startBtn.addEventListener('click', function() {
             breakTime -= 1;
             countBreak.textContent = breakTime;
             if (breakTime === 0) {
+                arr.push('hi');
+                let n = arr.length;
+                console.log(n);
                 buzzer.play();
                 clearInterval(startBreak);
                 countBreak.style.display = 'none';
                 timeType.style.display= 'none';
                 resetBtn.style.display = 'inline';
+                num.style.display = 'inline';
+                num.textContent = `Number of Pomodoros Completed: ${n}`;
             }
             if ((breakTime % 60) >= 10) {
                 countBreak.textContent = Math.floor(breakTime / 60) + ':' + (breakTime % 60);
@@ -72,8 +83,8 @@ startBtn.addEventListener('click', function() {
     }
 });
 resetBtn.addEventListener('click', function() {
-    count = 25;
-    breakTime = 5;
+    count = 1;
+    breakTime = 1;
     countTime.textContent = count;
     countBreak.textContent = breakTime;
     document.querySelectorAll('.remove-display').forEach(el => el.classList.remove('removeDisplay'));
