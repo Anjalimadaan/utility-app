@@ -9,7 +9,6 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    
 }
 
 .time-select,
@@ -114,5 +113,38 @@ video {
 
 .sound-select button img {
     height: 100%;
+}
+
+@media screen and (max-width: 815px) {
+    .app {
+        flex-direction: column-reverse;
+    }
+
+    .time-select,
+    .player-container,
+    .sound-select {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .time-select,
+    .sound-select {
+        justify-content: space-around;
+    }
+
+    .time-select button {
+        font-size: 15px;
+        width: 23%;
+        height: 30%;
+    }
+
+    .time-display {
+        font-size: 40px;
+        bottom: -5%;
+    }
+
+    .player-container svg {
+        height: 60%;
+    }
 }
 
