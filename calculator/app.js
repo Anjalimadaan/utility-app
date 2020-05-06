@@ -2,6 +2,7 @@ class Calculator {
     constructor (previousOperandTextElement, currentOperandTextElement) {
         this.previousOperandTextElement = previousOperandTextElement;
         this.currentOperandTextElement = currentOperandTextElement;
+        this.readyToReset = false;
         this.clear();
     }
 
@@ -51,6 +52,7 @@ class Calculator {
             default:
                return;
        }
+       this.readyToReset = true;
        this.currentOperand = computation;
        this.operation = undefined;
        this.previousOperand = '';
@@ -84,8 +86,6 @@ class Calculator {
     }
 }
 
-
-
 // Variables
 const numberButtons = document.querySelectorAll('[data-number]');
 const operationButtons = document.querySelectorAll('[data-operation]');
@@ -97,8 +97,13 @@ const currentOperandTextElement = document.querySelector('[data-current-operand]
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
 
+// Event Listeners
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
+        if(calculator.previousOperand === "" && calculator.currentOperand !== "" && calculator.readyToReset) {
+            calculator.currentOperand = "";
+            calculator.readyToReset = false;
+        }
         calculator.appendNumber(button.innerText);
         calculator.updateDisplay();
     });

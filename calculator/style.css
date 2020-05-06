@@ -2,6 +2,7 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
 }
 
 body {
@@ -9,7 +10,6 @@ body {
     padding: 0;
     background: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
     background-repeat: no-repeat;
-    font-family: 'Oswald', sans-serif;
 }
 
 .calculator-grid {
@@ -23,7 +23,7 @@ body {
 
 .calculator-grid > button {
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 32px;
     border: 1px solid white;
     outline: none;
     background-color: rgba(255, 255, 255, 0.75);
@@ -50,11 +50,34 @@ body {
 }
 
 .output .previous-operand {
-    font-size: 1.5rem;
+    font-size: 24px;
     color: rgba(255, 255, 255, 0.75);
 }
 
 .output .current-operand {
-    font-size: 2.5rem;
+    font-size: 40px;
     color: #fff;
+}
+
+@media only screen and (max-width: 450px) {
+    .calculator-grid {
+        grid-template-columns: repeat(4, 75px);
+        grid-template-rows: minmax(90px, auto) repeat(5, 75px);
+    }
+
+    .calculator-grid > button {
+        font-size: 24px;
+    }
+
+    .output {
+        padding: 8px;
+    }
+
+    .output .previous-operand {
+        font-size: 18px;
+    }
+
+    .output .current-operand {
+        font-size: 30px;
+    }
 }
