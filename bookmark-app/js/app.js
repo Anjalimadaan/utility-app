@@ -81,12 +81,22 @@ function fetchBookmarks() {
         const name = bookmarks[i].name;
         const url = bookmarks[i].url;
 
-        bookmarksResults.innerHTML += '<div class="card bg-light text-dark card-body">'+
-                                      '<h5>'+name+
-                                      '<a class="btn btn-outline-info mx-1" target="_blank" href="'+url+'">Visit</a>'+
-                                      '<a onclick="deleteBookmark(\''+url+'\')" class="btn btn-outline-danger" href="#">Delete</a>'+
-                                      '</h5>'+
+        bookmarksResults.innerHTML += '<div class="card">'+
+                                      '<div class="card-body">'+
+                                      '<h5 class="card-title">'+name+'</h5>'+
+                                      '<a class="btn btn-outline-info" target="_blank" href="'+url+'">Visit</a>'+
+                                      '<a onclick="deleteBookmark(\''+url+'\')" class="btn btn-outline-danger mx-2" href="#">Delete</a>'+
+                                      '</div>'+
                                       '</div>';
+        
+        
+        
+
+                                       //'<div class="card bg-light text-dark card-body">'+
+                                      //'<h5 class="card-title">'+name+'</h5>'+
+                                      //'<a class="btn btn-outline-info" target="_blank" href="'+url+'">Visit</a>'+
+                                      //'<a onclick="deleteBookmark(\''+url+'\')" class="btn btn-outline-danger" href="#">Delete</a>'+
+                                      //'</div>';
     }
 }
 
