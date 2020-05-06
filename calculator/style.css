@@ -9,6 +9,7 @@ body {
     padding: 0;
     background: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
     background-repeat: no-repeat;
+    font-family: 'Oswald', sans-serif;
 }
 
 .calculator-grid {
