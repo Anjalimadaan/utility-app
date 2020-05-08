@@ -5,34 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <div class="banner">My To Do List</div>
-            <div class="clear">
-                <i class="fa fa-refresh" aria-hidden="true"></i>
+        <div class="jumbotron position-relative">
+            <h3 class="text-left">My To Do List</h3>
+            <div class="clear position-absolute">
+                <i class="fas fa-sync clickable fa-2x onClicking" id="clear"></i>
             </div>
-            <div id="date"></div>
+            <h4 id="date"></h4>
+            <div id="add-to-do">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="input" placeholder="Add a to-do" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+                    <div class="input-group-append" id="button-addon4">
+                      <button class="btn btn-primary" id="add" type="button">
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="content">
-            <ul id="list">
-                <!--
-                <li class="item">
-                    <i class="fa fa-circle-thin check" job="complete" aria-hidden="true" id="0"></i>
-                    <p class="text"></p>
-                    <i class="fa fa-trash-o garbage" job="delete" aria-hidden="true" id="0"></i>
-                </li>
-                -->
-            </ul>
-        </div>
-        <div class="add-to-do">
-            <input type="text" id="input" placeholder="Add a to-do">
-            <i class="fa fa-plus-circle" aria-hidden="true" id="add"></i>
+            <ul class="list-group" id="list"> </ul>
         </div>
     </div>
-    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

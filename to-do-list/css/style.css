@@ -1,0 +1,46 @@
+.jumbotron {
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url(bg.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+i {
+    pointer-events: none;
+}
+
+.clickable {
+    pointer-events: auto;
+}
+
+.line-thro {
+    text-decoration: line-through;
+    color: #333;
+}
+
+div.position-absolute {
+    top: 30px;
+    right: 30px;
+}
+
+i.onClicking {
+    transition: all 0.1s ease;
+    -webkit-transition: all 0.1s ease;
+    -moz-transition: all 0.1s ease;
+    -ms-transition: all 0.1s ease;
+    -o-transition: all 0.1s ease;
+}
+
+i.onClicking:hover {
+    cursor: pointer;
+    text-shadow: 1px 3px 5px #000;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+.text {
+    pointer-events: none;
+}
