@@ -140,11 +140,11 @@ video {
 
     .time-display {
         font-size: 40px;
-        bottom: -5%;
+        bottom: -15%;
     }
 
     .player-container svg {
-        height: 60%;
+        height: 80%;
     }
 }
 

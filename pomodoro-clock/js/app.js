@@ -63,7 +63,7 @@ startBtn.addEventListener('click', function() {
             breakTime -= 1;
             countBreak.textContent = breakTime;
             if (breakTime === 0) {
-                arr.push('hi');
+                arr.push(1);
                 let n = arr.length;
                 console.log(n);
                 buzzer.play();
@@ -83,8 +83,8 @@ startBtn.addEventListener('click', function() {
     }
 });
 resetBtn.addEventListener('click', function() {
-    count = 1;
-    breakTime = 1;
+    count = 25;
+    breakTime = 5;
     countTime.textContent = count;
     countBreak.textContent = breakTime;
     document.querySelectorAll('.remove-display').forEach(el => el.classList.remove('removeDisplay'));

@@ -3,17 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Utilizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <a href="bookmark-app/index.html">Bookmarker</a>
-    <br>
-    <a href="to-do-list/index.html">To Do List</a>
-    <br>
-    <a href="meditation-app/index.html">Meditation App</a>
-    <br>
-    <a href="calculator/index.html">Calculator</a>
-    <br>
-    <a href="pomodoro-clock/index.html">the Pomodoro Clock</a>
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <span class="navbar-brand mb-0 h1">Utilizer</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="to-do-list/index.html" class="nav-link">To Do List</a>
+                </li>
+                <li class="nav-item">
+                    <a href="bookmark-app/index.html" class="nav-link">Site Bookmarker</a>
+                </li>
+                <li class="nav-item">
+                    <a href="meditation-app/index.html" class="nav-link">Meditation App</a>
+                </li>
+                <li class="nav-item">
+                    <a href="calculator/index.html" class="nav-link">Calculator</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pomodoro-clock/index.html" class="nav-link">Pomodoro Clock</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="my-2">Utility Tools</h1>
+        <h4 class="mb-4">Select a tool that is useful to you</h4>
+        <div class="row">
+            <div class="col-lg">
+                <i class="fas fa-list fa-2x"></i>
+                <h3>To Do List</h3>
+                <p class="text-justify">Keep track of your work by noting them down in the To Do List. You can check off the list items as soon as you are done or delete them if you change your mind. You can get rid of the list once you are done with it by clicking the refresh button at the top-right hand corner.</p>
+                <p><a class="btn btn-outline-info" href="to-do-list/index.html" role="button">Visit</a></p>
+            </div>
+            <div class="col-lg">
+                <i class="fas fa-bookmark fa-2x"></i>
+                <h3>Site Bookmarker</h3>
+                <p class="text-justify">Are there websites that you visit on the regular but find it too bothersome to type it down again and again? Use the Site Bookmarker to mark your favourite sites or delete them as and when you like!</p>
+                <p><a class="btn btn-outline-info" href="bookmark-app/index.html" role="button">Visit</a></p>
+            </div>
+            <div class="col-lg">
+                <i class="fas fa-cloud-sun fa-2x"></i>
+                <h3>Mediatation App</h3>
+                <p class="text-justify">The Meditation App helps you to focus and get into the flow state you badly want by clearing your mind of distractions with the soothing sounds that nature has to offer. Select your sounds and the required time period. Then, sit back and relax.</p>
+                <p><a class="btn btn-outline-info" href="meditation-app/index.html" role="button">Visit</a></p>
+            </div>
+            <div class="col-lg">
+                <i class="fas fa-calculator fa-2x"></i>
+                <h3>Calculator</h3>
+                <p class="text-justify">Need help with simple yet tedious calculations which are just too time-consuming? Use the Calculator for all your quick Math!</p>
+                <p><a class="btn btn-outline-info" href="calculator/index.html" role="button">Visit</a></p>
+            </div>
+            <div class="col-lg">
+                <i class="fas fa-stopwatch fa-2x"></i>
+                <h3>Pomodoro Clock</h3>
+                <p class="text-justify">The Pomodoro Technique is a time management technique used to break down work into intervals separated by short breaks. This is believed to help you stay focused on your work for longer periods of time. The Pomodoro Clock helps with setting the intervals and keeping track of the number of intervals completed.</p>
+                <p><a class="btn btn-outline-info" href="pomodoro-clock/index.html" role="button">Visit</a></p>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

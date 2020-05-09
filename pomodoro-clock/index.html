@@ -3,27 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>\The Pomodoro Clock</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Utilizer | Pomodoro Clock</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Pomodoro Clock</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class ="nav-link" href="../to-do-list/index.html">To Do List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../bookmark-app/index.html">Site Bookmarker</a>
+            </li>
+            <li class="nav-item">
+              <a class ="nav-link" href="../meditation-app/index.html">Meditation App</a>
+            </li>
+            <li class="nav-item">
+              <a class ="nav-link" href="../calculator/index.html">Calculator</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
     <audio id="buzzer" src="buzzer.mp3" type="audio/mpeg"></audio>
     <div class="container text-center">
-        <h1>The Pomodoro Clock</h1>
         <div class="mt-5" id="timeDiv">
             <h1 class="remove-display" id="title1">Session Time</h1>
             <a href="#" class="btn btn-info remove-display" id="minus5Clock">-</a>
             <h2 id="time-type"></h2>
-            <h2 id="num">1</h2>
+            <h2 id="num">25</h2>
             <a href="#" class="btn btn-info remove-display" id="plus5Clock">+</a>
             <a href="#" class="btn btn-info" id="reset">Reset</a>
         </div>
         <div class="mt-5" id="breakDiv">
             <h1 class="remove-display" id="title1">Break Time</h1>
             <a href="#" class="btn btn-info remove-display" id="minus5Break">-</a>
-            <h2 class="remove-display" id="breakNum">1</h2>
+            <h2 class="remove-display" id="breakNum">5</h2>
             <a href="#" class="btn btn-info remove-display" id="plus5Break">+</a>
         </div>
         <a href="#" class="btn btn-info mt-4 remove-display" id="start">Start</a>
@@ -33,7 +56,8 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
