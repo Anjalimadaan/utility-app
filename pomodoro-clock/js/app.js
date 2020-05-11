@@ -28,14 +28,22 @@ let arr = [];
 
 
 // EVENT LISTENERS
+
+// Minus Session Time
 minusTime.addEventListener('click', minus5);
+// Plus Session Time
 plusTime.addEventListener('click', plus5);
+// Minus Break Time
 minusBreak.addEventListener('click', minus5Break);
+// Plus Break Time
 plusBreak.addEventListener('click', plus5Break);
+
+// Start Button
 startBtn.addEventListener('click', function() {
     const counter = setInterval(timer, 1000);
     count *= 60;
     breakTime *= 60;
+    // Session Timer
     function timer() {
         let startBreak;
         // Hide the variables
@@ -52,11 +60,13 @@ startBtn.addEventListener('click', function() {
             countTime.style.display = 'none';
             countBreak.style.display = 'inline';
         }
+        // Format the time display
         if ((count % 60) >= 10) {
             countTime.textContent = Math.floor(count / 60) + ':' + (count % 60);
         } else {
             countTime.textContent = Math.floor(count / 60) + ':' + '0' + (count % 60);
         }
+        // Break Timer
         function breakTimer() {
             timeType.textContent = 'Break Time: ';
             countBreak.classList.remove('removeDisplay');
@@ -74,6 +84,7 @@ startBtn.addEventListener('click', function() {
                 num.style.display = 'inline';
                 num.textContent = `Number of Pomodoros Completed: ${n}`;
             }
+            // Format the time display
             if ((breakTime % 60) >= 10) {
                 countBreak.textContent = Math.floor(breakTime / 60) + ':' + (breakTime % 60);
             } else {
@@ -82,6 +93,8 @@ startBtn.addEventListener('click', function() {
         }
     }
 });
+
+// Reset Button
 resetBtn.addEventListener('click', function() {
     count = 25;
     breakTime = 5;
@@ -95,6 +108,7 @@ resetBtn.addEventListener('click', function() {
 
 
 // FUNCTIONS
+// Minus Buttons
 function minus5() {
     if (count > 5) {
         count -= 5;
@@ -109,6 +123,7 @@ function minus5Break() {
     }
 }
 
+// Plus Buttons
 function plus5() {
     count += 5;
     countTime.textContent = count;

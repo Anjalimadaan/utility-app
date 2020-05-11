@@ -14,6 +14,7 @@ dateElement.innerHTML = now.toLocaleDateString('en-US', options);
 let id = 0;
 let record = [];
 
+// Check to see if items have been stored in the local storage
 if (localStorage.getItem('TODO') != null) {
     console.log(localStorage.getItem('TODO'));
     record = JSON.parse(localStorage.getItem('TODO'));
@@ -60,7 +61,7 @@ function loadList() {
 }
 loadList();
 
-// Add a New List Item
+// Add a New List Item When the Enter Key is Pressed
 document.addEventListener('keyup', function(event) {
     let itemName, item, id;
     if (event.keyCode === 13) {
@@ -96,6 +97,7 @@ document.addEventListener('keyup', function(event) {
     }
 });
 
+// Add a New List Item When the Add Button is Pressed
 plus.addEventListener('click', function(event) {
     let itemName, item, id;
         // Only if the input is not empty
@@ -134,6 +136,7 @@ list.addEventListener('click', function(event) {
     const element = event.target;
     const children = element.childNodes;
     if (children[1].classList.contains('fa-check')) {
+        // If the element is unchecked
         element.parentNode.parentNode.querySelector('span.text').style.textDecoration = 'line-through';
         children[1].classList.toggle('fa-check');
         children[1].classList.toggle('fa-times');
@@ -144,6 +147,7 @@ list.addEventListener('click', function(event) {
             }
         }
     } else if (children[1].classList.contains('fa-times')) {
+        // If the element is checked
         element.parentNode.parentNode.querySelector('span.text').style.textDecoration = 'none';
         children[1].classList.toggle('fa-times');
         children[1].classList.toggle('fa-check');
@@ -154,6 +158,7 @@ list.addEventListener('click', function(event) {
             }
         }
     } else if (children[1].classList.contains('fa-trash-alt')) {
+        // If the element is trashed
         element.parentNode.parentNode.remove(element.parentNode);
         for (let key in record) {
             if (record[key].id == element.id) {
@@ -167,6 +172,7 @@ list.addEventListener('click', function(event) {
         }
         //console.log(record);
     }
+    // Reset the Local Storage
     localStorage.removeItem('TODO');
     localStorage.setItem('TODO', JSON.stringify(record));
 });

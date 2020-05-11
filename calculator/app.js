@@ -6,21 +6,25 @@ class Calculator {
         this.clear();
     }
 
+    // All Clear Function
     clear() {
         this.currentOperand = '';
         this.previousOperand = '';
         this.operation = undefined;
     }
 
+    // Delete Function
     delete() {
         this.currentOperand = this.currentOperand.toString().slice(0, -1);
     }
 
+    // How the numbers appear on the screen when pressed
     appendNumber(number) {
         if (number === '.' && this.currentOperand.includes('.')) return
         this.currentOperand = this.currentOperand.toString() + number.toString();
     }
 
+    // Selecting the operation 
     chooseOperation(operation) {
         if (this.currentOperand === '') return
         if (this.previousOperand !== '') {
@@ -31,6 +35,7 @@ class Calculator {
         this.currentOperand = '';
     }
 
+    // Calculate the output
    compute() {
        let computation;
        const previous = parseFloat(this.previousOperand);
@@ -58,6 +63,7 @@ class Calculator {
        this.previousOperand = '';
     }
 
+    // Formatting of the numbers
     getDisplay(number) {
         const stringNumber = number.toString();
         const integerDigits = parseFloat(stringNumber.split('.')[0]);
@@ -75,8 +81,10 @@ class Calculator {
         }
     }
 
+    // Updating the display 
     updateDisplay() {
         this.currentOperandTextElement.innerText = this.getDisplay(this.currentOperand);
+        // Check whether you are operating or operation is completed
         if (this.operation != undefined) {
             this.previousOperandTextElement.innerText = `${this.getDisplay(this.previousOperand)} ${this.operation}`;
         } else {
@@ -98,8 +106,11 @@ const currentOperandTextElement = document.querySelector('[data-current-operand]
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
 
 // Event Listeners
+
+// Numbers
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
+        // Check if operation has been completed
         if(calculator.previousOperand === "" && calculator.currentOperand !== "" && calculator.readyToReset) {
             calculator.currentOperand = "";
             calculator.readyToReset = false;
@@ -109,6 +120,7 @@ numberButtons.forEach(button => {
     });
 });
 
+// Operators
 operationButtons.forEach(button => {
     button.addEventListener('click', () => {
         calculator.chooseOperation(button.innerText);
@@ -116,16 +128,19 @@ operationButtons.forEach(button => {
     });
 });
 
+// Equals Button
 equalsButton.addEventListener('click', button => {
     calculator.compute();
     calculator.updateDisplay();
 });
 
+// All Clear Button
 allClearButton.addEventListener('click', button => {
     calculator.clear();
     calculator.updateDisplay();
 });
 
+// Delete Button
 deleteButton.addEventListener('click', button => {
     calculator.delete();
     calculator.updateDisplay()
