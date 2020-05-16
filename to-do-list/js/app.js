@@ -23,14 +23,14 @@ if (localStorage.getItem('TODO') != null) {
 // Display the List Items on the UI
 function loadList() {
     for (let key in record) {
-        const check = record[key].check;
+        const check = record[key].done;
         const itemName = record[key].name;
         let item;
         // Condition for whether the checkbox should be ticked or crossed
         if (check) {
             item =  `<li class="list-group-item d-flex justify-content-between">
                         <div class="d-flex flex-column">
-                            <span class="text">${itemName}</span>
+                            <span class="text cross">${itemName}</span>
                         </div>
                         <div>
                             <button class="btn btn-outline-info btn-sm" id="${id}" job="complete">
@@ -136,8 +136,10 @@ list.addEventListener('click', function(event) {
     const element = event.target;
     const children = element.childNodes;
     if (children[1].classList.contains('fa-check')) {
+        console.log(element.parentNode.parentNode.querySelector('span.text'));
         // If the element is unchecked
-        element.parentNode.parentNode.querySelector('span.text').style.textDecoration = 'line-through';
+       // element.parentNode.parentNode.querySelector('span.text').style.textDecoration = 'line-through';
+        element.parentNode.parentNode.querySelector('span.text').classList.toggle('cross');
         children[1].classList.toggle('fa-check');
         children[1].classList.toggle('fa-times');
         for (let key in record) {
@@ -148,7 +150,7 @@ list.addEventListener('click', function(event) {
         }
     } else if (children[1].classList.contains('fa-times')) {
         // If the element is checked
-        element.parentNode.parentNode.querySelector('span.text').style.textDecoration = 'none';
+        element.parentNode.parentNode.querySelector('span.text').classList.toggle('cross');
         children[1].classList.toggle('fa-times');
         children[1].classList.toggle('fa-check');
         for (let key in record) {

@@ -44,3 +44,7 @@ i.onClicking:hover {
 .text {
     pointer-events: none;
 }
+
+.cross {
+    text-decoration: line-through;
+}
